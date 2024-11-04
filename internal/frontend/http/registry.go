@@ -227,7 +227,7 @@ func (f *Frontend) buildInstallImage(ctx context.Context, img requestedImage, sc
 
 	var imageIndex v1.ImageIndex = empty.Index
 
-	for _, arch := range []artifacts.Arch{artifacts.ArchAmd64, artifacts.ArchArm64} {
+	for _, arch := range []artifacts.Arch{artifacts.ArchAmd64} {
 		prof := profile.InstallerProfile(img.SecureBoot(), arch)
 
 		prof, err := profile.EnhanceFromSchematic(ctx, prof, schematic, f.artifactsManager, f.secureBootService, versionTag)
