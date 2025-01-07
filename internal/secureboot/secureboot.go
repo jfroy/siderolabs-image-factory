@@ -67,6 +67,7 @@ func NewService(opts Options) (*Service, error) {
 				PCRSigner: profile.SigningKey{
 					KeyPath: opts.PCRKeyPath,
 				},
+				IncludeWellKnownCerts: true,
 			},
 		}, nil
 	case opts.AzureKeyVaultURL != "" && opts.AzureCertificateName != "" && opts.AzureKeyName != "":
